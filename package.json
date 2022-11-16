@@ -2,6 +2,7 @@
   "name": "thalir-design-thinking",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -18,6 +19,7 @@
     "next": "13.0.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-icons": "^4.6.0",
     "sass": "^1.56.1",
     "typescript": "4.8.4"
   },

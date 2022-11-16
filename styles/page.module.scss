@@ -1,0 +1,81 @@
+.dashboard {
+  height: 500px;
+  border: 25px solid black;
+  border-radius: 15px;
+  margin: 25px;
+  overflow: hidden;
+
+  .hornhonker {
+    z-index: 1;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 6.25rem);
+    grid-template-areas: "left back right";
+    justify-content: space-between;
+    place-items: center;
+    height: 28.125rem;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.31);
+    box-shadow: 0 0.25rem 2rem rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(40px);
+    // margin-top: 150px;
+
+    &::before {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      content: "";
+      background: no-repeat 100% url("../public/wallpaper.jpg");
+    }
+
+    .hornlh,
+    .hornch,
+    .hornrh {
+      display: flex;
+      flex-direction: column;
+      background: rgba(255, 255, 255, 0.31);
+      width: 6.25rem;
+      height: 6.25rem;
+      justify-content: center;
+      align-items: center;
+      border-radius: 1rem;
+      backdrop-filter: blur(20px);
+    }
+
+    .hornlh {
+      grid-area: left;
+    }
+
+    .hornch {
+      grid-area: back;
+    }
+    .hornrh {
+      grid-area: right;
+    }
+  }
+}
+
+.buttonRow {
+  display: grid;
+  width: calc(100% - 60px);
+  margin: 30px;
+  grid-template-columns: repeat(3, auto);
+  justify-content: space-between;
+
+  button {
+    background: rgba(0, 0, 0, 0.31);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.59);
+    justify-content: space-between;
+    height: 3.125rem;
+    width: 3.125rem;
+
+    &:hover {
+      background-color: aquamarine;
+    }
+    &:active {
+      background-color: black;
+    }
+  }
+}
