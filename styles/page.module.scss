@@ -1,36 +1,41 @@
 .dashboard {
-  height: 500px;
-  border: 25px solid black;
-  border-radius: 15px;
-  margin: 25px;
   overflow: hidden;
-
+  height: 80vh;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-inline: 1rem;
+  background: black;
+  
   .hornhonker {
-    z-index: 1;
+    z-index: 0;
     position: relative;
+    border-radius: 0.5rem;
     display: grid;
     grid-template-columns: repeat(3, 6.25rem);
     grid-template-areas: "left back right";
     justify-content: space-between;
     place-items: center;
-    height: 28.125rem;
+    height: 100%;
     width: 100%;
-    background: rgba(255, 255, 255, 0.31);
     box-shadow: 0 0.25rem 2rem rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(40px);
-    // margin-top: 150px;
-
-    &::before {
+    background: no-repeat center/100% auto url("../public/wallpaper.jpg");
+    overflow: hidden;
+    padding: 2rem;
+    
+    &::after {
+      content: "";
       position: absolute;
       inset: 0;
-      z-index: -1;
-      content: "";
-      background: no-repeat 100% url("../public/wallpaper.jpg");
+      z-index: 1;
+      border-radius: 0.5rem;
+      backdrop-filter: blur(4px);
+      background: rgba(255, 255, 255, 0.31);
     }
 
     .hornlh,
     .hornch,
     .hornrh {
+      z-index: 2;
       display: flex;
       flex-direction: column;
       background: rgba(255, 255, 255, 0.31);
@@ -57,25 +62,27 @@
 
 .buttonRow {
   display: grid;
-  width: calc(100% - 60px);
-  margin: 30px;
+  height: 20vh;
   grid-template-columns: repeat(3, auto);
   justify-content: space-between;
+  place-items: center;
+  padding: 1rem;
 
   button {
-    background: rgba(0, 0, 0, 0.31);
+    background: hsla(0, 0%, 69%);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.59);
     justify-content: space-between;
-    height: 3.125rem;
-    width: 3.125rem;
+    aspect-ratio: 1;
+    font-size: 1rem;
+    transition: scale 0.125s ease-in-out;
 
     &:hover {
-      background-color: aquamarine;
+      scale: 1.1;
     }
     &:active {
-      background-color: black;
+      background: hsl(0, 0%, 50%);
     }
   }
 }

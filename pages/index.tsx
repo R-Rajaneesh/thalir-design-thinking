@@ -1,3 +1,4 @@
+import { Howl } from "howler";
 import { useEffect, useRef } from "react";
 import { FaVolumeUp } from "react-icons/fa";
 import styles from "../styles/page.module.scss";
@@ -7,6 +8,8 @@ export default function Home() {
   const hornch: any = useRef();
   const hornrh: any = useRef();
 
+  const audio = new Howl({ src: ["car-honk.mp3"] });
+
   useEffect(() => {
     hornlh.current.style.display = "none";
     hornch.current.style.display = "none";
@@ -14,10 +17,10 @@ export default function Home() {
   }, []);
 
   const handleClick = (side: any) => {
-    setTimeout(() => {
-      hornlh.style.display = "none";
+    const resetDisplay = setTimeout(() => {
+      side.current.style.display = "none";
     }, 3000);
-    hornlh.style.display = "flex";
+    side.current.style.display = "flex";
     audio.play();
   };
 
@@ -39,6 +42,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      
       <div className={`${styles.buttonRow}`}>
         <button id="horn-l" onClick={() => handleClick(hornlh)}>
           Left Horn

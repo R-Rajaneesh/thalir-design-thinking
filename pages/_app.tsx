@@ -5,11 +5,7 @@ import "../styles/globals.scss";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <Script src="/javascript/sound.js" strategy="lazyOnload" />
-      <Script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js" />
-      <Component {...pageProps} />
-    </>
+    <Component {...pageProps} />
   );
 }
 export default MyApp;
