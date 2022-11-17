@@ -1,6 +1,8 @@
 import { Howl } from "howler";
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { FaVolumeUp } from "react-icons/fa";
+import what3words from "../public/App Icons/what3words.png";
 import styles from "../styles/page.module.scss";
 
 export default function Home() {
@@ -11,16 +13,16 @@ export default function Home() {
   const audio = new Howl({ src: ["car-honk.mp3"] });
 
   useEffect(() => {
-    hornlh.current.style.display = "none";
-    hornch.current.style.display = "none";
-    hornrh.current.style.display = "none";
+    hornlh.current.style.opacity = 0;
+    hornch.current.style.opacity = 0;
+    hornrh.current.style.opacity = 0;
   }, []);
 
   const handleClick = (side: any) => {
     const resetDisplay = setTimeout(() => {
-      side.current.style.display = "none";
+      side.current.style.opacity = 0;
     }, 3000);
-    side.current.style.display = "flex";
+    side.current.style.opacity = 100;
     audio.play();
   };
 
@@ -28,9 +30,56 @@ export default function Home() {
     <div>
       <div className={`${styles.dashboard}`}>
         <div className={`${styles.hornhonker}`}>
+          <div className={`${styles.homeScreen}`}>
+            <div className={`${styles.app}`}>
+              <Image draggable={false} src={what3words} alt={"what3words-app.png"} width={50} height={50} className={`${styles.appIcon}`} />
+              <p>What3Words</p>
+            </div>
+            <div className={`${styles.app}`}>
+              <Image draggable={false} src={what3words} alt={"what3words-app.png"} width={50} height={50} className={`${styles.appIcon}`} />
+              <p>What3Words</p>
+            </div>
+            <div className={`${styles.app}`}>
+              <Image draggable={false} src={what3words} alt={"what3words-app.png"} width={50} height={50} className={`${styles.appIcon}`} />
+              <p>What3Words</p>
+            </div>
+            <div className={`${styles.app}`}>
+              <Image draggable={false} src={what3words} alt={"what3words-app.png"} width={50} height={50} className={`${styles.appIcon}`} />
+              <p>What3Words</p>
+            </div>
+            <div className={`${styles.app}`}>
+              <Image draggable={false} src={what3words} alt={"what3words-app.png"} width={50} height={50} className={`${styles.appIcon}`} />
+              <p>What3Words</p>
+            </div>
+            <div className={`${styles.app}`}>
+              <Image draggable={false} src={what3words} alt={"what3words-app.png"} width={50} height={50} className={`${styles.appIcon}`} />
+              <p>What3Words</p>
+            </div>
+            <div className={`${styles.app}`}>
+              <Image draggable={false} src={what3words} alt={"what3words-app.png"} width={50} height={50} className={`${styles.appIcon}`} />
+              <p>What3Words</p>
+            </div>
+            <div className={`${styles.app}`}>
+              <Image draggable={false} src={what3words} alt={"what3words-app.png"} width={50} height={50} className={`${styles.appIcon}`} />
+              <p>What3Words</p>
+            </div>
+            <div className={`${styles.app}`}>
+              <Image draggable={false} src={what3words} alt={"what3words-app.png"} width={50} height={50} className={`${styles.appIcon}`} />
+              <p>What3Words</p>
+            </div>
+            <div className={`${styles.app}`}>
+              <Image draggable={false} src={what3words} alt={"what3words-app.png"} width={50} height={50} className={`${styles.appIcon}`} />
+              <p>What3Words</p>
+            </div>
+            <div className={`${styles.app}`}>
+              <Image draggable={false} src={what3words} alt={"what3words-app.png"} width={50} height={50} className={`${styles.appIcon}`} />
+              <p>What3Words</p>
+            </div>
+          </div>
+
           <div ref={hornlh} id="horn-lh" className={`${styles.hornlh}`}>
             <FaVolumeUp size={25} />
-            Left Side 1
+            Left Side
           </div>
           <div ref={hornch} id="horn-ch" className={`${styles.hornch}`}>
             <FaVolumeUp size={25} />
@@ -42,7 +91,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      
+
       <div className={`${styles.buttonRow}`}>
         <button id="horn-l" onClick={() => handleClick(hornlh)}>
           Left Horn

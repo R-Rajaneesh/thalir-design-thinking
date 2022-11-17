@@ -4,11 +4,12 @@
   border-radius: 1rem;
   padding: 1rem;
   margin-inline: 1rem;
+  margin-block-start: 1rem;
   background: black;
-  
+
   .hornhonker {
-    z-index: 0;
     position: relative;
+    z-index: 0;
     border-radius: 0.5rem;
     display: grid;
     grid-template-columns: repeat(3, 6.25rem);
@@ -18,10 +19,41 @@
     height: 100%;
     width: 100%;
     box-shadow: 0 0.25rem 2rem rgba(0, 0, 0, 0.1);
-    background: no-repeat center/100% auto url("../public/wallpaper.jpg");
+    background: no-repeat center/100% 100% url("../public/wallpaper.jpg");
     overflow: hidden;
     padding: 2rem;
-    
+
+    .homeScreen {
+      position: absolute;
+      z-index: 2;
+      inset: 0;
+      padding: 2rem;
+      width: 100%;
+      display: grid;
+      place-items: center;
+      grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+
+      .app {
+        display: grid;
+        place-items: center;
+        aspect-ratio: 1;
+        padding: 0.5rem;
+        max-width: max-content;
+        cursor: pointer;
+        user-select: none;
+
+        p {
+          margin-block: 0;
+          font-weight: 500;
+        }
+        .appIcon {
+          user-select: none;
+          border-radius: 0.5rem;
+          z-index: 2;
+        }
+      }
+    }
+
     &::after {
       content: "";
       position: absolute;
@@ -45,6 +77,8 @@
       align-items: center;
       border-radius: 1rem;
       backdrop-filter: blur(20px);
+      box-shadow: 0 0 30px hsl(0, 0%, 0%, 0.125);
+      transition: opacity 75ms ease-out;
     }
 
     .hornlh {
@@ -62,21 +96,23 @@
 
 .buttonRow {
   display: grid;
-  height: 20vh;
+  height: calc(20vh - 1rem);
   grid-template-columns: repeat(3, auto);
   justify-content: space-between;
   place-items: center;
   padding: 1rem;
 
   button {
+    cursor: pointer;
     background: hsla(0, 0%, 69%);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.59);
+    border: 2px solid rgba(255, 255, 255, 0.59);
     justify-content: space-between;
     aspect-ratio: 1;
     font-size: 1rem;
     transition: scale 0.125s ease-in-out;
+    color: black;
 
     &:hover {
       scale: 1.1;
