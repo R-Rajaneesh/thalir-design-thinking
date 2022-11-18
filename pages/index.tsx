@@ -1,7 +1,9 @@
 import { Howl } from "howler";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { FaVolumeUp } from "react-icons/fa";
+import { FaVolumeUp, FaSpotify, FaBluetooth, FaTemperatureLow } from "react-icons/fa";
+import { FcSettings, FcSpeaker } from "react-icons/fc";
+import { GoRadioTower } from "react-icons/Go";
 import styles from "../styles/page.module.scss";
 import Clock from "react-live-clock";
 // App Icons
@@ -14,8 +16,6 @@ export default function Home() {
   const hornrh: any = useRef();
 
   const audio = new Howl({ src: ["car-honk.mp3"] });
-
-
 
   useEffect(() => {
     hornlh.current.style.opacity = 0;
@@ -36,9 +36,9 @@ export default function Home() {
       <div className={`${styles.dashboard}`}>
         <div className={`${styles.hornhonker}`}>
           <div className={`${styles.homeScreen}`}>
-            {/* <div className={`${styles.notifBar}`}>
-              <Clock format={"HH:mm A"} ticking={true}  timezone={"Asia/Kolkata"} />
-            </div> */}
+            <div className={`${styles.notifBar}`}>
+              <Clock format={`HH:mm A`} ticking={true} timezone={"Asia/Kolkata"} />
+            </div>
             <div className={`${styles.app}`}>
               <Image draggable={false} src={what3words} alt={"what3words-app.png"} width={50} height={50} className={`${styles.appIcon}`} />
               <p>What3Words</p>
@@ -52,36 +52,35 @@ export default function Home() {
               <p>Google Assistant</p>
             </div>
             <div className={`${styles.app}`}>
-              <Image draggable={false} src={what3words} alt={"what3words-app.png"} width={50} height={50} className={`${styles.appIcon}`} />
+              <FcSettings size={50} />
+              <p>Settings</p>
+            </div>
+            <div className={`${styles.app}`}>
+              <FaSpotify size={50} color={"#1DB954"} />
+              <p>Spotify</p>
+            </div>
+            <div className={`${styles.app}`}>
+              <GoRadioTower size={50} />
+              <p>FM/AM</p>
+            </div>
+            <div className={`${styles.app}`}>
+              <FaBluetooth size={50} color={"#008cff"} />
+              <p>Bluetooth</p>
+            </div>
+            <div className={`${styles.app}`}>
+              <FaTemperatureLow size={50} />
               <p>What3Words</p>
             </div>
             <div className={`${styles.app}`}>
-              <Image draggable={false} src={what3words} alt={"what3words-app.png"} width={50} height={50} className={`${styles.appIcon}`} />
-              <p>What3Words</p>
+              <FcSpeaker size={50} />
+              <p>Sound</p>
             </div>
-            <div className={`${styles.app}`}>
-              <Image draggable={false} src={what3words} alt={"what3words-app.png"} width={50} height={50} className={`${styles.appIcon}`} />
-              <p>What3Words</p>
-            </div>
-            <div className={`${styles.app}`}>
-              <Image draggable={false} src={what3words} alt={"what3words-app.png"} width={50} height={50} className={`${styles.appIcon}`} />
-              <p>What3Words</p>
-            </div>
-            <div className={`${styles.app}`}>
-              <Image draggable={false} src={what3words} alt={"what3words-app.png"} width={50} height={50} className={`${styles.appIcon}`} />
-              <p>What3Words</p>
-            </div>
-            <div className={`${styles.app}`}>
-              <Image draggable={false} src={what3words} alt={"what3words-app.png"} width={50} height={50} className={`${styles.appIcon}`} />
-              <p>What3Words</p>
-            </div>
-            <div className={`${styles.app}`}>
-              <Image draggable={false} src={what3words} alt={"what3words-app.png"} width={50} height={50} className={`${styles.appIcon}`} />
-              <p>What3Words</p>
-            </div>
-            <div className={`${styles.app}`}>
-              <Image draggable={false} src={what3words} alt={"what3words-app.png"} width={50} height={50} className={`${styles.appIcon}`} />
-              <p>What3Words</p>
+            <div className={`${styles.notifBar}`}>
+              <Clock
+                format={`D/M/YYYY`}
+                ticking={true}
+                timezone={"Asia/Kolkata"}
+              />
             </div>
           </div>
 

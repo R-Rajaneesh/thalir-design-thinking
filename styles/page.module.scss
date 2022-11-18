@@ -19,7 +19,7 @@
     height: 100%;
     width: 100%;
     box-shadow: 0 0.25rem 2rem rgba(0, 0, 0, 0.1);
-    background: no-repeat center/100% 100% url("../public/wallpaper.jpg");
+    background: no-repeat center/100% 100% url("../public/wallpaper1.jpg");
     overflow: hidden;
     padding: 2rem;
 
@@ -70,7 +70,7 @@
       inset: 0;
       z-index: 1;
       border-radius: 0.5rem;
-      backdrop-filter: blur(4px);
+      // backdrop-filter: blur(4px);
       background: rgba(255, 255, 255, 0.31);
     }
 
