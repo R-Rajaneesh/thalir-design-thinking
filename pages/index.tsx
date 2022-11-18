@@ -1,16 +1,21 @@
 import { Howl } from "howler";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaVolumeUp } from "react-icons/fa";
-import what3words from "../public/App Icons/what3words.png";
 import styles from "../styles/page.module.scss";
-
+import Clock from "react-live-clock";
+// App Icons
+import what3words from "../public/App Icons/what3words.png";
+import googleMaps from "../public/App Icons/googleMaps.png";
+import googleAssistant from "../public/App Icons/googleAssistant.png";
 export default function Home() {
   const hornlh: any = useRef();
   const hornch: any = useRef();
   const hornrh: any = useRef();
 
   const audio = new Howl({ src: ["car-honk.mp3"] });
+
+
 
   useEffect(() => {
     hornlh.current.style.opacity = 0;
@@ -31,17 +36,20 @@ export default function Home() {
       <div className={`${styles.dashboard}`}>
         <div className={`${styles.hornhonker}`}>
           <div className={`${styles.homeScreen}`}>
+            {/* <div className={`${styles.notifBar}`}>
+              <Clock format={"HH:mm A"} ticking={true}  timezone={"Asia/Kolkata"} />
+            </div> */}
             <div className={`${styles.app}`}>
               <Image draggable={false} src={what3words} alt={"what3words-app.png"} width={50} height={50} className={`${styles.appIcon}`} />
               <p>What3Words</p>
             </div>
             <div className={`${styles.app}`}>
-              <Image draggable={false} src={what3words} alt={"what3words-app.png"} width={50} height={50} className={`${styles.appIcon}`} />
-              <p>What3Words</p>
+              <Image draggable={false} src={googleMaps} alt={"google_maps-app.png"} width={50} height={50} className={`${styles.appIcon}`} />
+              <p>Google Maps</p>
             </div>
             <div className={`${styles.app}`}>
-              <Image draggable={false} src={what3words} alt={"what3words-app.png"} width={50} height={50} className={`${styles.appIcon}`} />
-              <p>What3Words</p>
+              <Image draggable={false} src={googleAssistant} alt={"google_assistant-app.png"} width={50} height={50} className={`${styles.appIcon}`} />
+              <p>Google Assistant</p>
             </div>
             <div className={`${styles.app}`}>
               <Image draggable={false} src={what3words} alt={"what3words-app.png"} width={50} height={50} className={`${styles.appIcon}`} />
